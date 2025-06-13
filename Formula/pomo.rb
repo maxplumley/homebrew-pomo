@@ -5,41 +5,23 @@
 class Pomo < Formula
   desc "A terminal-based Pomodoro timer with a clean, intuitive interface."
   homepage "https://github.com/maxplumley/pomo"
-  version "1.0.17"
+  version "1.1.2"
+  depends_on :macos
 
-  on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/maxplumley/pomo/releases/download/1.0.17/pomo_Darwin_x86_64.tar.gz"
-      sha256 "5dde883f224270a397335959073795cfb0ca13c9928e00e7192fb9a0278ab4aa"
+  if Hardware::CPU.intel?
+    url "https://github.com/maxplumley/pomo/releases/download/1.1.2/pomo_Darwin_x86_64.tar.gz"
+    sha256 "04cf0c39ccab09cb21c34024d31a57758662431b1f6a6ed6c58512b0e4e92a1c"
 
-      def install
-        bin.install "pomo"
-      end
-    end
-    if Hardware::CPU.arm?
-      url "https://github.com/maxplumley/pomo/releases/download/1.0.17/pomo_Darwin_arm64.tar.gz"
-      sha256 "09bfa437253b910ca2bb6d6beeac32dfb82785094638ef3db61d5739a92172b3"
-
-      def install
-        bin.install "pomo"
-      end
+    def install
+      bin.install "pomo"
     end
   end
+  if Hardware::CPU.arm?
+    url "https://github.com/maxplumley/pomo/releases/download/1.1.2/pomo_Darwin_arm64.tar.gz"
+    sha256 "d8d92ca20c306761125a5e00c37a90d2c6f5f212a85550651575a77621ea1c9b"
 
-  on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/maxplumley/pomo/releases/download/1.0.17/pomo_Linux_x86_64.tar.gz"
-      sha256 "419fb8d1e6869a78ac175ee3ecee982ba46222efa095690da1b2807039c2486e"
-      def install
-        bin.install "pomo"
-      end
-    end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/maxplumley/pomo/releases/download/1.0.17/pomo_Linux_arm64.tar.gz"
-      sha256 "996a4b7e03149a41ac6ff85cfeb6b9250ff4d6fc39241c6e3d102f9167e128aa"
-      def install
-        bin.install "pomo"
-      end
+    def install
+      bin.install "pomo"
     end
   end
 
