@@ -5,20 +5,20 @@
 class Pomo < Formula
   desc "A terminal-based Pomodoro timer with a clean, intuitive interface."
   homepage "https://github.com/maxplumley/pomo"
-  version "1.1.2"
+  version "1.2.0"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/maxplumley/pomo/releases/download/1.1.2/pomo_Darwin_x86_64.tar.gz"
-    sha256 "04cf0c39ccab09cb21c34024d31a57758662431b1f6a6ed6c58512b0e4e92a1c"
+    url "https://github.com/maxplumley/pomo/releases/download/1.2.0/pomo_Darwin_x86_64.tar.gz"
+    sha256 "428a3f97df38b9f1c4a85bfbbcc0f138ab3a04e26c029affda0202ec46a9d9f4"
 
     def install
       bin.install "pomo"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/maxplumley/pomo/releases/download/1.1.2/pomo_Darwin_arm64.tar.gz"
-    sha256 "d8d92ca20c306761125a5e00c37a90d2c6f5f212a85550651575a77621ea1c9b"
+    url "https://github.com/maxplumley/pomo/releases/download/1.2.0/pomo_Darwin_arm64.tar.gz"
+    sha256 "2975e6fb3f9b62ba19745a811e1fe1ca352935acd0bd56452825833127ccd200"
 
     def install
       bin.install "pomo"
